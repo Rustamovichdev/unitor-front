@@ -1,0 +1,1 @@
+import{j as e}from"./index-BKlQRHfT.js";function s(){return e.jsxs("div",{className:"container py-6",children:[e.jsx("h1",{className:"text-2xl font-bold",children:"Dashboard"}),e.jsx("p",{className:"mt-2 text-muted-foreground",children:"Welcome to Unitor Gym CRM. Members, payments, trainers, subscriptions, and reports will be added here."})]})}export{s as DashboardPage};

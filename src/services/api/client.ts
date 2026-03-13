@@ -5,7 +5,7 @@
 
 import { storage } from "@/utils/storage";
 
-const BASE_URL = import.meta.env.VITE_API_URL ?? "http://localhost:3000/api";
+const BASE_URL = import.meta.env.VITE_API_URL ?? "https://dummyjson.com";
 
 const TOKEN_KEY = "unitor_access_token";
 const REFRESH_TOKEN_KEY = "unitor_refresh_token";

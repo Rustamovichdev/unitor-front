@@ -1,4 +1,4 @@
-import { type ReactNode } from "react";
+import { memo, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import {
   Card,
@@ -17,7 +17,7 @@ interface AuthFormLayoutProps {
   footerLink?: { to: string; label: string };
 }
 
-export function AuthFormLayout({
+function AuthFormLayoutComponent({
   title,
   description,
   children,
@@ -51,3 +51,6 @@ export function AuthFormLayout({
     </Card>
   );
 }
+
+export const AuthFormLayout = memo(AuthFormLayoutComponent);
+

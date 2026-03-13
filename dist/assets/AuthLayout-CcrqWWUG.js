@@ -1,0 +1,1 @@
+import{u as s,j as t,N as i,O as a}from"./index-B0qecpnU.js";function u(){const{isAuthenticated:e,isInitialized:r}=s();return r?e?t.jsx(i,{to:"/",replace:!0}):t.jsx(a,{}):t.jsx("div",{className:"flex min-h-svh items-center justify-center",children:t.jsx("div",{className:"h-8 w-8 animate-spin rounded-full border-2 border-primary border-t-transparent"})})}export{u as AuthLayout};

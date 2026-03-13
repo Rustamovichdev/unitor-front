@@ -10,9 +10,9 @@ export function AuthLayout() {
 
   if (!isInitialized) {
     return (
-      <div className="flex min-h-svh items-center justify-center">
+      <main className="flex min-h-svh items-center justify-center">
         <div className="h-8 w-8 animate-spin rounded-full border-2 border-primary border-t-transparent" />
-      </div>
+      </main>
     );
   }
 
@@ -20,5 +20,9 @@ export function AuthLayout() {
     return <Navigate to="/" replace />;
   }
 
-  return <Outlet />;
+  return (
+    <main>
+      <Outlet />
+    </main>
+  );
 }

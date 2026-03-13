@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useAuthContext } from "@/features/auth/context/AuthContext";
+import { Icons } from "@/utils/icons";
 
 /**
  * Main app layout for authenticated users.
@@ -17,21 +18,20 @@ export function DashboardLayout() {
   };
 
   return (
-    <div className="min-h-svh flex flex-col">
-      <header className="border-b bg-card">
-        <div className="container flex h-14 items-center justify-between px-4">
-          <Link to="/" className="font-semibold">
-            Unitor Gym CRM
-          </Link>
-          <div className="flex items-center gap-4">
-            <span className="text-sm text-muted-foreground">
-              {user?.email}
-            </span>
-            <Button variant="outline" size="sm" onClick={handleLogout}>
-              Log out
-            </Button>
-          </div>
-        </div>
+    <div className="min-h-svh flex flex-col pr-[60px]">
+      <header className="border-b bg-card flex justify-end pt-[26px] pb-[44px]">
+           <div className="flex gap-[26px]">
+            <button>
+                 language
+            </button>
+
+             <Link to={"/setting"}>
+               <Icons.settingIcon/>
+             </Link>
+             <Link to={"/setting"}>
+               <Icons.settingIcon/>
+             </Link>
+           </div>
       </header>
       <main className="flex-1 p-4">
         <Outlet />

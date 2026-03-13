@@ -1,10 +1,26 @@
+import { lazy } from "react";
 import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
 import { ProtectedRoute } from "./ProtectedRoute";
-import { AuthLayout } from "@/layouts/AuthLayout";
-import { DashboardLayout } from "@/layouts/DashboardLayout";
-import { LoginPage } from "@/features/auth/pages/LoginPage";
-import { RegisterPage } from "@/features/auth/pages/RegisterPage";
-import { DashboardPage } from "@/pages/DashboardPage";
+
+const AuthLayout = lazy(() =>
+  import("@/layouts/AuthLayout").then((m) => ({ default: m.AuthLayout }))
+);
+
+const DashboardLayout = lazy(() =>
+  import("@/layouts/DashboardLayout").then((m) => ({ default: m.DashboardLayout }))
+);
+
+const LoginPage = lazy(() =>
+  import("@/features/auth/pages/LoginPage").then((m) => ({ default: m.LoginPage }))
+);
+
+const RegisterPage = lazy(() =>
+  import("@/features/auth/pages/RegisterPage").then((m) => ({ default: m.RegisterPage }))
+);
+
+const DashboardPage = lazy(() =>
+  import("@/pages/DashboardPage").then((m) => ({ default: m.DashboardPage }))
+);
 
 const router = createBrowserRouter([
   {
@@ -29,5 +45,7 @@ const router = createBrowserRouter([
 ]);
 
 export function Routes() {
-  return <RouterProvider router={router} />;
+  return <RouterProvider future={{
+    v7_startTransition: true,
+  }} router={router} />;
 }
